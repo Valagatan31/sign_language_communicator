@@ -18,7 +18,7 @@ Multiple people per sign
 
 Testing on 10 unseen individuals
 
-#Hand Landmark Extraction (MediaPipe)
+# Hand Landmark Extraction (MediaPipe)
 Removed background noise
 
 Reduced input size
