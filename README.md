@@ -1,73 +1,56 @@
-# Problem Statement
+# Project Overview
 
-Public ISL datasets often contain very limited variation (sometimes a single video per word). Models trained on such data overfit and fail to generalize to new people and environment
+This project presents a Vision-Based Indian Sign Language (ISL) Recognition System using Deep Learning.
+The system captures hand gestures from video input, extracts hand landmarks using MediaPipe, and classifies gestures using Bi-LSTM and X3D models.
 
-# Overview
+The goal is to reduce communication barriers between deaf individuals and non-signers.
 
-Indian Sign Language (ISL) recognition from videos is challenging due to dataset scarcity and signer variability. Initial experiments on existing datasets led to overfitting and poor real-world performance.
+# Objectives
+- Recognize ISL gestures from video input
+- Convert gestures into text
+- Build a low-cost vision-based system
+- Compare CNN, LSTM, Bi-LSTM, and X3D models
+- Improve generalization using custom dataset
 
-To address this, we created a custom dataset with multiple individuals performing selected signs. Instead of using full frames, we used MediaPipe to extract hand landmarks only, so the model learns pure gesture dynamics. After testing multiple architectures, the best results came from fine-tuning a pretrained X3D model for spatio-temporal understanding.
+# model used 
+- ResNet18
+- AlexNet
+- mdiapipe
+- Rnn
+- biLstm
+- x3d
 
-# Custom Dataset
+# Technologies Used
+- Python
+- OpenCV
+- MediaPipe
+- PyTorch
+- NumPy
+- Pandas
+- Jupyter Notebook
+- VS Code
 
-Signs (6): Hello, Namaste, Good Morning, Headache, Happy, Beautiful
+# Methodology
+- Video Data Collection
+- Frame Extraction (OpenCV)
+- Landmark Extraction (MediaPipe)
+- Feature Conversion (NumPy arrays)
+- Model Training (Bi-LSTM / X3D)
 
-15 videos per sign
+# Results
+Mediapipe + Bi-LSTM achieved ~97% training accuracy.
+X3D achieved 93% training and 89% validation accuracy.
 
-Multiple people per sign
 
-Testing on 10 unseen individuals
 
-# Hand Landmark Extraction (MediaPipe)
-Removed background noise
+# Future work
+- Increase dataset size
+- Add more ISL signs
+- Implement real-time recognition
+- Convert text back to sign language
+- Deploy as web/mobile app
 
-Reduced input size
 
-Focused only on hand motion for better learning
-
-# Model Evolution
-Model	Issue
-ResNet18 + BiLSTM	Overfitting (full frames, noisy background)
-AlexNet + BiLSTM	Still overfitting
-MediaPipe + BiLSTM	Accuracy improved
-X3D (pretrained) fine-tuned	Best accuracy & generalization
-
-# Final Model — X3D for Video Understanding
-Captures motion across frames
-
-Lightweight and powerful for video tasks
-
-Best performance in our experiments
-
-# Tech Stack
-
-Python, OpenCV
-
-MediaPipe
-
-PyTorch / PyTorchVideo
-
-BiLSTM
-
-X3D (pretrained)
-
-# Key Learnings
-
-Dataset variation > model complexity
-
-Background removal improves accuracy
-
-Pretrained video models generalize better for gestures
-
-# Future Work
-
-Add more ISL signs
-
-Real-time webcam integration
-
-Text-to-speech output
-
-Web/mobile deployment for accessibility
 
 
 
