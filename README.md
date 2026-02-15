@@ -39,7 +39,7 @@ The goal is to reduce communication barriers between deaf individuals and non-si
 
 # Results
 - Mediapipe + Bi-LSTM achieved 97.75% training accuracy and 50% validation accuracy.
-- X3D achieved 97.75% training and 89% validation accuracy.
+- X3D achieved 99% training and 89% validation accuracy.
 
 
 
